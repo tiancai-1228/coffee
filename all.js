@@ -7,9 +7,7 @@ const list =document.querySelector('.content')
 let size =Array.from(sizes);
 let datas=JSON.parse(localStorage.getItem('coffeeshop')) || [];
 
-
-
-
+//載入資料
 function updata(){
     let str=`<h2>目前訂單列表</h2>
     <li>
@@ -32,7 +30,7 @@ function updata(){
     }
     list.innerHTML=str;
 }; 
-
+//新增資料
 function newData(e){
     e.preventDefault();
     let sized = size.filter(siz => siz.checked == true);
@@ -52,7 +50,7 @@ function newData(e){
         updata();
     }
 }
-
+//刪除資料
 function del(e){
     e.preventDefault();
     if(e.target.tagName !=='A'){
@@ -69,28 +67,13 @@ function del(e){
     }
   
 };
-
-function changeitem(e){
-    let edi =e.target.dataset.edi;
-    datas[edi].names=`<input type="text" name="name" placeholder="請輸入品項名稱" class="ediName" data-coffee="${edi}" value="${ datas[edi].names}">`
-    datas[edi].price=`<input type="number" name="price" placeholder="請輸入價格" class="ediprice" value="${ datas[edi].price}">`
-    datas[edi].sized=`<input type="text" name="price" placeholder="L / M /S" class="edisize" value="${ datas[edi].sized}">`
-    datas[edi].notes=`<textarea name="notes" class="edinotes" placeholder="備註，非必填">${datas[edi].notes}</textarea>`
-    datas[edi].type='確定'
-    let values = JSON.stringify(datas);
-    localStorage.setItem('coffeeshop',values);
-    updata();
-}
-
+//編輯資料
 function edit(e){
     e.preventDefault();
 
     if(e.target.tagName !=='A'){
         return;
         }else if(e.target.outerText =='編輯'){
-            // console.log(e.target.dataset.edi)
-            // if()
- 
         changeitem(e);
        
     }else if(e.target.outerText =='確定'){
@@ -99,7 +82,7 @@ function edit(e){
         let ediprice =document.querySelector('.ediprice')
         let edisize =document.querySelector('.edisize')
         let edinotes =document.querySelector('.edinotes')
-        // console.log(ediName.dataset.coffee)
+
         console.log(ediName.dataset)
         if(ediName.value =='' || ediprice.value =='' || edisize.value =='' ){
             alert('欄位不能為空')
@@ -126,6 +109,20 @@ function edit(e){
     }
    
 };
+//編輯資料的輸入窗
+function changeitem(e){
+    let edi =e.target.dataset.edi;
+    datas[edi].names=`<input type="text" name="name" placeholder="請輸入品項名稱" class="ediName" data-coffee="${edi}" value="${ datas[edi].names}">`
+    datas[edi].price=`<input type="number" name="price" placeholder="請輸入價格" class="ediprice" value="${ datas[edi].price}">`
+    datas[edi].sized=`<input type="text" name="price" placeholder="L / M /S" class="edisize" value="${ datas[edi].sized}">`
+    datas[edi].notes=`<textarea name="notes" class="edinotes" placeholder="備註，非必填">${datas[edi].notes}</textarea>`
+    datas[edi].type='確定'
+    let values = JSON.stringify(datas);
+    localStorage.setItem('coffeeshop',values);
+    updata();
+}
+
+
 
 updata();
 submit.addEventListener('click',newData);
