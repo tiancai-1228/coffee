@@ -7,6 +7,7 @@ const list =document.querySelector('.content')
 let size =Array.from(sizes);
 let datas=JSON.parse(localStorage.getItem('coffeeshop')) || [];
 
+
 //載入資料
 function updata(){
     let str=`<h2>目前訂單列表</h2>
