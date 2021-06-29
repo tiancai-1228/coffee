@@ -7,6 +7,7 @@ var vm = new Vue({
         password:'',
         Newaccount:'',
         Newpassword:'',
+        email:'sky0975657713@gmail.com',
         pageLink:{
             index:'index.html',
             product:'product.html',
@@ -33,7 +34,7 @@ var vm = new Vue({
             Noaccount :false,
             Nopassword:false,
         },
-        email:'sky0975657713@gmail.com',
+        
 
     },
     methods:{
