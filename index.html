@@ -11,18 +11,18 @@
     <div id="app">
         <div class="header">
             <div class="header-item">
-                <div class="logo"><a href="pageLink.index">{{logo}}</a></div>
-                <div class="menu">
-                    <a :href="pageLink.index">{{menu[0]}}</a>
-                    <a :href="pageLink.product">{{menu[1]}}</a>
-                    <a :href="pageLink.member">{{menu[2]}}</a>
-                </div>
+                <div class="logo"><a :href="menu[0].link">{{logo}}</a></div>
+                <ul class="menu">
+                   <li v-for="item in menu">
+                    <a :href="item.link">{{item.name}}</a>
+                   </li>
+                </ul>
             </div>
-            <div class="social">
+            <ul class="social">
                 <a :href="socialLink.fb" ><img src="img/fb.png" alt="facebook"></a>
                 <a :href="socialLink.ig" ><img src="img/ig.png" alt="instagram"></a>
                 <a :href="socialLink.github" ><img src="img/github.png" alt="github"></a>
-            </div>
+            </ul>
         </div>
         <div class="banner">
             wellcome
@@ -65,12 +65,7 @@
                 el:'#app',
                 data:{
                     logo:'coffee!',
-                    menu:['首頁', '產品列表' , '會員中心'],
-                    pageLink:{
-                        index:'index.html',
-                        product:'product.html',
-                        member:'member.html'
-                    },
+                    menu:[{name:'首頁',link:'index.html'},{name:'產品列表',link:'product.html'},{name:'會員中心',link:'member.html'},{name:'購物車',link:'shopcar.html'}],
                     socialLink:{
                         fb:'https://facebook.com/tiancai1228',
                         ig:'https://www.instagram.com/tiancai_1228',

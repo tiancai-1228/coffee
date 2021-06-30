@@ -2,17 +2,12 @@ var vm = new Vue({
     el:'.memberALL',
     data:{
         logo:'coffee!',
-        menu:['首頁', '產品列表' , '會員中心'],
+        menu:[{name:'首頁',link:'index.html'},{name:'產品列表',link:'product.html'},{name:'會員中心',link:'member.html'},{name:'購物車',link:'shopcar.html'}],
         account:'',
         password:'',
         Newaccount:'',
         Newpassword:'',
         email:'sky0975657713@gmail.com',
-        pageLink:{
-            index:'index.html',
-            product:'product.html',
-            member:'member.html'
-        },
         socialLink:{
             fb:'https://facebook.com/tiancai1228',
             ig:'https://www.instagram.com/tiancai_1228',

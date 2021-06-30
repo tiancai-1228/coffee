@@ -108,96 +108,74 @@ table {
 .social a :hover{
     opacity: .7;
 }
-.warp{
-    min-height: 100%;
-}
+
 .content{
- 
-    margin: 250px 0 200px 0;
-    /* border: solid 1px black; */
+    width: 60%;
+    margin: 200px auto 100px auto;
+}
+.content h2{
+    font-size: 34px;
+    text-align: center;
+    margin-top: 30px;
+}
+.item{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px black solid;
+    margin: 20px 0;
+    /* border: 1px black solid; */
+}
+.itemtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px 0;
+    border-bottom: 1px solid gray;
+}
+.itemtitle p{
+    /* border: 1px black solid; */
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.itemFooter{
+    margin-top:20px;
+    width: 80%;
+    text-align: right;
+    font-size: 22px;
 }
 
-
-.log-reg{
-    display: flex;
-    justify-content: center;
+.connection{
+    /* border: black 1px solid; */
+    margin: 30px 0;
 }
-.log-reg a{
-    position: relative;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 0 80px;
-}
-.log-reg a:first-child::after{
-    content: " ";
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    right: 0;
-    bottom: 0;
-    margin: 0 -80px;
-    background-color: #000000;
-}
-.log-reg a:nth-child(1){
-    color: black;
-}
-.log-reg a:nth-child(2){
-    color: gray;
-}
-.log-content{
-    width: 40%;
-    margin: 40px auto 80px auto;
-    display: flex;
-    /* display: none; */
-    flex-direction: column;
-    align-self: center;
-    /* border: solid 1px black; */
-}
-.log-content h4{
+.connection label{
+    font-size: 22px;
+    font-weight: 600;
     margin-left: 10px;
-    font-size: 12px;
-    color: red;
-    /* border: solid 1px black; */
+    color: rgb(0, 56, 139);
 }
-.log-content input{
-    margin: 20px 0 5px 0;
+.connection input{
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
     height: 40px;
-    outline: none;
 }
-
-.reg-content{
-    width: 40%;
-    margin: 40px auto 80px auto;
+.gobuy{
     display: flex;
-    /* display: none; */
-    flex-direction: column;
-    align-self: center;
-    /* border: solid 1px black; */
-}
-.reg-content h4{
-    margin-left: 10px;
-    font-size: 12px;
-    color: red;
-}
-
-.reg-content input{
-    margin: 10px;
-    height: 30px;
-    outline: none;
-}
-
-.submit{
-    display: flex;
-    text-decoration: none;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    width: 60%;
+    margin: 30px auto;
+    height: 70px;
+    font-size: 22px;
     color: white;
-    margin: 50px auto;
-    font-size: 20px;
-    height: 50px;
-    width: 90%;
+    background-color: gray;
     border-radius: 5px;
+}
+.gobuy:hover{
+    background-color: rgb(116, 96, 96);
+    color: black;
 }
 
 

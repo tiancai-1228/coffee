@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coffeeshop</title>
+    <link rel="stylesheet" href="all.css/shopcar.css">
+</head>
+<body>
+    <div id="shopcar">
+        <div class="header">
+            <div class="header-item">
+                <div class="logo"><a  :href="menu[0].link">{{logo}}!</a></div>
+                <ul class="menu">
+                    <li v-for="item in menu">
+                     <a :href="item.link">{{item.name}}</a>
+                    </li>
+                 </ul>
+            </div>
+            <div class="social">
+                <a :href="socialLink.fb" ><img src="img/fb.png" alt="facebook"></a>
+                <a :href="socialLink.ig" ><img src="img/ig.png" alt="instagram"></a>
+                <a :href="socialLink.github" ><img src="img/github.png" alt="github"></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>購物籃</h2>
+            <ul class="item">
+                <li class="itemtitle">
+                    <p>品名</p>
+                    <p>數量</p>
+                    <p>單價</p>
+                </li>
+                <li></li>
+                <li class="itemFooter">
+                    <p>總計:</p>
+                </li>
+            </ul>
+            <h2>訂單資訊</h2>
+            <form action="#" class="connection">
+                <label for="name">收件人姓名:</label><br>
+                <input type="text" name="mame"><br>
+                <label for="phone">收件人電話:</label><br>
+                <input type="text" name="phone"><br>
+                <label for="ads">收件地址:</label><br>
+                <input type="text" name="ads"><br>
+                <button type="submit" class="gobuy">送出訂單</button>
+            </form>
+        </div>
+
+
+        <ul class="footer">
+            <li class="social">
+                <a :href="socialLink.fb" ><img src="img/fb.png" alt="facebook"></a>
+                <a :href="socialLink.ig" ><img src="img/ig.png" alt="instagram"></a>
+                <a :href="socialLink.github" ><img src="img/github.png" alt="github"></a>
+            </li>
+            <li>聯繫我：<a :href="'mailto:'+email"> {{email}}</a></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="all.js/shopcar.js"></script>
+    
+</body>
+</html>

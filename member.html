@@ -12,12 +12,12 @@
         <div class="warp">
             <div class="header">
                 <div class="header-item">
-                    <div class="logo"><a href="index.html">{{logo}}!</a></div>
-                    <div class="menu">
-                        <a :href="pageLink.index">{{menu[0]}}</a>
-                        <a :href="pageLink.product">{{menu[1]}}</a>
-                        <a :href="pageLink.member">{{menu[2]}}</a>
-                    </div>
+                    <div class="logo"><a  :href="menu[0].link">{{logo}}!</a></div>
+                    <ul class="menu">
+                        <li v-for="item in menu">
+                         <a :href="item.link">{{item.name}}</a>
+                        </li>
+                     </ul>
                 </div>
                 <div class="social">
                     <a :href="socialLink.fb" ><img src="img/fb.png" alt="facebook"></a>
@@ -59,7 +59,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <script src="all.js/member.js"></script>
+    <script src="all.js/member.js"></script>
     
 </body>
 </html>
