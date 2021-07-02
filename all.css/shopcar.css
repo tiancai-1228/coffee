@@ -187,8 +187,8 @@ table {
     border-radius: 5px;
 }
 .gobuy:hover{
-    background-color: rgb(116, 96, 96);
-    color: black;
+    background-color: rgb(153, 153, 153);
+    color: rgb(23, 7, 255);
 }
 
 
