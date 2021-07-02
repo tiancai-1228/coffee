@@ -1,4 +1,4 @@
-let list =JSON.parse(localStorage.getItem("mycoffee"));
+let list =JSON.parse(localStorage.getItem("mycoffee")) || [];
 var vm = new Vue({
     el:'#shopcar',
     data:{
@@ -11,7 +11,7 @@ var vm = new Vue({
         },
         email:'sky0975657713@gmail.com',
 
-        myshop:JSON.parse(localStorage.getItem("mycoffee")),
+        myshop:JSON.parse(localStorage.getItem("mycoffee")) || [],
         total:list.reduce( (sun,i) => {return sun+(parseInt(i.pay,10)*parseInt(i.nums,10))},0),
 
     },
