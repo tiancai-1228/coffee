@@ -33,9 +33,14 @@
                     <p>數量</p>
                     <p>單價</p>
                 </li>
-                <li></li>
+                <li class="itemContent" v-for="(mycoffees,index) in myshop">
+                    <p>{{mycoffees.name}}</p>
+                    <p>{{mycoffees.nums}}</p>
+                    <p>{{mycoffees.pay}}</p>
+                    <a href="#" @click.prevent="delcoffee(index)">刪除</a>
+                </li>
                 <li class="itemFooter">
-                    <p>總計:</p>
+                    <p>總計:{{total}}</p>
                 </li>
             </ul>
             <h2>訂單資訊</h2>

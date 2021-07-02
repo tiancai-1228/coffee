@@ -1,3 +1,4 @@
+let list =JSON.parse(localStorage.getItem("mycoffee"));
 var vm = new Vue({
     el:'#shopcar',
     data:{
@@ -8,11 +9,22 @@ var vm = new Vue({
             ig:'https://www.instagram.com/tiancai_1228',
             github:'https://github.com/tiancai-1228'
         },
-        title:'My  CoffeeShop',
-        h2:['About ME', 'Skill'],
-        txt:['這只是一個單純練習用的購物網站', '此網站所用技術大多為vue.js / Html / Css / Javascrip / 基礎RWD變版'],
-
         email:'sky0975657713@gmail.com',
 
-    }
-})
+        myshop:JSON.parse(localStorage.getItem("mycoffee")),
+        total:list.reduce( (sun,i) => {return sun+(parseInt(i.pay,10)*parseInt(i.nums,10))},0),
+
+    },
+    methods:{
+        delcoffee(index){
+            // this.myshop=this.myshop.filter((item,i)=> {
+            //     return i!= index;
+            // });
+            this.myshop.splice(index,1)
+            localStorage.setItem('mycoffee',JSON.stringify(this.myshop));
+            this.total=this.myshop.reduce( (sun,i) => {return sun+(parseInt(i.pay,10)*parseInt(i.nums,10))},0)
+        }
+    },
+
+
+});
