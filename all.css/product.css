@@ -180,6 +180,71 @@ table {
     }
 }
 @media(max-width:768px){
+    #item_control {
+        position: absolute;
+        top: 0px;
+        z-index: -1;
+      }
+      .item_btn {
+        box-sizing: border-box;
+        width: 40px;
+        height: 25px;
+        background-color: white;
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        border-top: 5px solid gray;
+        border-bottom: 5px solid gray;
+      }
+      .item_btn::before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        width: 25px;
+        left: 0px;
+        background-color: gray;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+      #item_control:checked ~ .header .menu {
+          display: block;
+        /* margin-top: 20px; */
+      }
+    
+    .header{
+        display: flex;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        top: 0;
+        left: 0;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 999;
+        /* border: 1px rgb(255, 136, 0) solid; */
+        border-bottom: 1px solid rgb(219, 219, 219);
+        box-sizing: border-box;
+    }
+    .header-item{
+        display: block;
+        align-items: center;
+        margin: 0 auto;
+        /* border: 1px black solid; */
+    }
+    .menu{
+        display: none;
+        flex-direction: column;
+        /* margin-top: -100px; */
+        transition: .5s;
+        /* margin-top: 20px; */
+        /* border: 1px black solid; */
+    }
+   
+    .social{
+        margin-right: 20px;
+    }
     .logo a{
         font-size: 50px;
     }

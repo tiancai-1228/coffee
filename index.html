@@ -9,9 +9,12 @@
 </head>
 <body>
     <div id="app">
+        <input type="checkbox" name="" id="item_control" class="item_control" />
         <div class="header">
+            
             <div class="header-item">
                 <div class="logo"><a :href="menu[0].link">{{logo}}</a></div>
+                <label for="item_control" class="item_btn"></label>
                 <ul class="menu">
                    <li v-for="item in menu">
                     <a :href="item.link">{{item.name}}</a>

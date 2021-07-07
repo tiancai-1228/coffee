@@ -9,14 +9,17 @@
 </head>
 <body>
     <div id="shopcar">
+        <input type="checkbox" name="" id="item_control" class="item_control" />
         <div class="header">
+            
             <div class="header-item">
-                <div class="logo"><a  :href="menu[0].link">{{logo}}!</a></div>
+                <div class="logo"><a :href="menu[0].link">{{logo}}</a></div>
+                <label for="item_control" class="item_btn"></label>
                 <ul class="menu">
-                    <li v-for="item in menu">
-                     <a :href="item.link">{{item.name}}</a>
-                    </li>
-                 </ul>
+                   <li v-for="item in menu">
+                    <a :href="item.link">{{item.name}}</a>
+                   </li>
+                </ul>
             </div>
             <div class="social">
                 <a :href="socialLink.fb" ><img src="img/fb.png" alt="facebook"></a>
